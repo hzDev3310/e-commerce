@@ -1,1 +1,9 @@
-<p>home works!</p>
+<app-navbar></app-navbar>
+<div class="mt-28 flex">
+  <app-sideBard></app-sideBard>
+  <div class="flex flex-wrap justify-between px-10">
+    <div *ngFor="let product of productContent" class="p-2">
+      <app-product [product]="product"></app-product>
+    </div>
+  </div>
+</div>

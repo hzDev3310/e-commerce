@@ -3,7 +3,7 @@ package com.e.commerce.service;
 import com.e.commerce.model.Product;
 import com.e.commerce.repository.ProductRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +15,7 @@ import java.util.Optional;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    @Autowired
+   
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }

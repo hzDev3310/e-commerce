@@ -1,7 +1,7 @@
 package com.e.commerce.model;
 
 import jakarta.persistence.Entity;
-import java.util.Date;
+
 
 @Entity
 public class Customer extends User {
