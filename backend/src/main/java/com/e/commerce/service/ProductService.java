@@ -2,10 +2,13 @@ package com.e.commerce.service;
 
 import com.e.commerce.model.Product;
 import com.e.commerce.repository.ProductRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.util.List;
+
 import java.util.Optional;
 
 @Service
@@ -23,8 +26,12 @@ public class ProductService {
     }
 
     // Retrieve all products
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+
+    public Page<Product> getAllProducts(Pageable pageable) {
+        return productRepository.findAll(pageable);
+    }
+    public Page<Product> getProductsByCategory(String category, Pageable pageable) {
+        return productRepository.findByCategory(category, pageable);
     }
 
     // Retrieve a product by ID
