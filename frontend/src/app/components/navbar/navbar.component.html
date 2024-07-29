@@ -3,7 +3,7 @@
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
     <div>
-      <a href="/home" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img
           src="https://www.svgrepo.com/show/250771/ecommerce.svg"
           class="h-8"
@@ -42,19 +42,23 @@
               />
             </svg>
           </div>
-          <input
-            type="search"
-            id="default-search"
-            class="block w-full p-4 ps-10 text-sm text-gray-900 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500"
-            placeholder="Search Mockups, Logos..."
-            required
-          />
-          <button
-            type="submit"
-            class="text-white absolute end-2.5 bottom-2.5 bg-yellow-800 hover:bg-yellow-900 focus:ring-4 focus:outline-yellow-900 focus:ring-yellow-900 font-medium rounded-lg text-sm px-4 py-2"
-          >
-            Search
-          </button>
+          <form>
+            <input
+              id="default-search"
+              class="block w-full p-4 ps-10 text-sm text-gray-900 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500"
+              type="text"
+              [(ngModel)]="nameInput"
+              [ngModelOptions]="{ standalone: true }"
+              placeholder="Enter category"
+              required
+            />
+            <button
+              (click)="onNameSelect()"
+              class="text-white absolute end-2.5 bottom-2.5 bg-yellow-800 hover:bg-yellow-900 focus:ring-4 focus:outline-yellow-900 focus:ring-yellow-900 font-medium rounded-lg text-sm px-4 py-2"
+            >
+              Search
+            </button>
+          </form>
         </div>
       </form>
     </div>
@@ -66,7 +70,6 @@
       >
         shopping card
       </button>
-
     </div>
   </div>
 </nav>

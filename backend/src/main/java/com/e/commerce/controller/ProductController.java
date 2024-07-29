@@ -36,13 +36,16 @@ public class ProductController {
         public ResponseEntity<Page<Product>> getAllProducts(
                 @RequestParam(defaultValue = "0") int page,
                 @RequestParam(defaultValue = "10") int size,
-                @RequestParam(required = false) String category
+                @RequestParam(required = false) String category,
+                @RequestParam(required = false) String keyword
         ) {
             Pageable pageable = PageRequest.of(page, size);
             Page<Product> products;
 
             if (category != null && !category.isEmpty()) {
                 products = productService.getProductsByCategory(category, pageable);
+            } else if (keyword != null && !keyword.isEmpty()) {
+                products = productService.searchProducts(keyword,pageable);
             } else {
                 products = productService.getAllProducts(pageable);
             }

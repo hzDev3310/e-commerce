@@ -11,7 +11,7 @@ export class ProductService {
 
   constructor(private apiService: ApiService) {}
 
-  getProducts(url: string, page: number = 0, size: number = 10, category?: string): Observable<Products> {
+  getProducts(url: string, page: number = 0, size: number = 10, category?: string , keyword?:string): Observable<Products> {
     let params = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString());
@@ -19,6 +19,10 @@ export class ProductService {
     if (category) {
       params = params.set('category', category);
     }
+    if (keyword) {
+      params = params.set('keyword', keyword);
+    }
+
 
     return this.apiService.get(url, { params, responseType: "json" });
   }

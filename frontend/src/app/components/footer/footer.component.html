@@ -1,0 +1,32 @@
+<nav aria-label="Page navigation example " class="flex justify-center my-4">
+  <ul class="inline-flex -space-x-px text-base h-10">
+    <li (click)="previousPage()">
+      <a
+        href="#"
+        class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700"
+        >Previous</a
+      >
+    </li>
+      <div *ngFor="let i of pages">
+        <li (click)="onChangePage(i)">
+          <a
+            href="#"
+            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+            [ngClass]="{
+              'bg-yellow-100': currentPage === i ,
+              'bg-white': currentPage !== i
+            }"
+          >
+            {{ i + 1 }}
+          </a>
+        </li>
+      </div>
+    <li (click)="nextPage()">
+      <a
+        href="#"
+        class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700"
+        >next</a
+      >
+    </li>
+  </ul>
+</nav>

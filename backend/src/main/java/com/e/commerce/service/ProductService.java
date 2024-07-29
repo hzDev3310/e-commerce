@@ -34,6 +34,11 @@ public class ProductService {
         return productRepository.findByCategory(category, pageable);
     }
 
+
+    public Page<Product> searchProducts(String keyword ,Pageable pageable) {
+        return productRepository.searchByNameOrCategory(keyword,pageable);
+    }
+
     // Retrieve a product by ID
     public Optional<Product> getProduct(Integer id) {
         return productRepository.findById(id);

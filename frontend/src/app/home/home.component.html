@@ -1,9 +1,13 @@
-<app-navbar></app-navbar>
+<app-navbar (nameChange)="onNameChanged($event)" ></app-navbar>
 <div class="mt-28 flex">
-  <app-sideBard></app-sideBard>
-  <div class="flex flex-wrap justify-between px-10">
+  <app-sideBard (categoryChange)="onCategoryChanged($event)"></app-sideBard>
+ <div class="flex justify-center w pl-60">
+  <div class="flex flex-wrap justify-start ">
     <div *ngFor="let product of productContent" class="p-2">
       <app-product [product]="product"></app-product>
     </div>
   </div>
+ </div>
 </div>
+<app-footer [totalPages]="totalPages" (pageChange)="onChangePage($event)" (next)="nextPage()" (previous)="previousPage()"></app-footer>
+

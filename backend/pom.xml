@@ -48,6 +48,12 @@
 			<artifactId>spring-security-core</artifactId>
 			<version>5.7.5</version>
 		</dependency>
+		<!-- For Maven -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
+
 
 		<!-- Use mysql-connector-java for better clarity
 		<dependency>
